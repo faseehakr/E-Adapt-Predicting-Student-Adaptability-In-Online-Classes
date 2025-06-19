@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Adapt - Your Adaptability Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+       
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 50%, #81d4fa 100%);
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .float-animation-delayed {
+            animation: float 3s ease-in-out infinite 1.5s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scale-on-hover {
+            transition: transform 0.3s ease;
+        }
+        
+       
+        .result-card .scale-on-hover:hover {
+            transform: scale(1.03); 
+        }
+
+        .result-card:hover {
+            transform: scale(1.01); 
+        }
+        
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        
+        .result-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 249, 255, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden; 
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">E-Adapt</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Home</a>
+                    <a href="/predict" class="text-gray-700">Predict My Adaptability</a>
+                    <a href="#" class="text-blue-600 font-semibold hover:text-blue-600 transition-colors font-medium">Increase Adaptability</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button class="text-gray-700 hover:text-blue-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="gradient-bg min-h-screen py-20 relative overflow-hidden">
+        <div class="absolute top-20 left-10 w-12 h-12 bg-yellow-400 rounded-full opacity-80 float-animation"></div>
+        <div class="absolute top-40 right-20 w-8 h-8 bg-pink-400 rounded-full opacity-80 float-animation-delayed"></div>
+        <div class="absolute bottom-40 left-20 w-10 h-10 bg-blue-400 rounded-full opacity-80 float-animation"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in" id="page-title">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Your <span class="text-cyan-500">Personalized</span> Adaptability Strategies
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Here are actionable insights to enhance your learning agility and resilience.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mb-16">
+                <div class="result-card rounded-2xl p-8 card-shadow fade-in" style="transition-delay: 0.1s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Develop a Growth Mindset</h2>
+                    </div>
+                    <img src="https://assets.entrepreneur.com/content/3x2/2000/1717446166-Untitleddesign-2024-06-04T002208792.png" 
+                        alt="Growth Mindset" 
+                        class="rounded-lg mb-4 w-full h-40 object-cover scale-on-hover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x160/purple-500/white?text=Growth+Mindset'">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Embrace challenges as learning opportunities instead of obstacles.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Replace “I can’t do this” with “I can’t do this yet.”</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Celebrate small improvements to stay motivated.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card rounded-2xl p-8 card-shadow fade-in" style="transition-delay: 0.2s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Stay Flexible with Your Schedule</h2>
+                    </div>
+                    <img src="https://www.monitask.com/wp-content/uploads/2024/12/flexible-schedule.png" 
+                        alt="Flexible Schedule" 
+                        class="rounded-lg mb-4 w-full h-40 object-cover scale-on-hover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x160/blue-500/white?text=Flexible+Schedule'">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Create a weekly plan but be open to adjustments.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">If a class is postponed or a topic is tough, reschedule with intention — not guilt.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Use digital planners that let you drag and drop tasks (like Notion or Google Calendar).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card rounded-2xl p-8 card-shadow fade-in" style="transition-delay: 0.3s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Be Comfortable with Change</h2>
+                    </div>
+                    <img src="https://media.istockphoto.com/id/970820056/photo/closeup-on-notebook-over-wood-table-background-focus-on-wooden-blocks-with-letters-making.jpg?s=612x612&w=0&k=20&c=IOAQvNerXvqiNFY9sN_Cn6qvGah_p5UkkRI-1dBQcwA=" 
+                        alt="Comfort with Change" 
+                        class="rounded-lg mb-4 w-full h-40 object-cover scale-on-hover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x160/green-500/white?text=Embrace+Change'">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Online platforms, tools, or even formats might change — adapt without resistance.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Learn to explore new interfaces (like Zoom updates or a different LMS) quickly and calmly.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Practice using new tools before class (e.g., breakout rooms, Padlet, Miro).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card rounded-2xl p-8 card-shadow fade-in" style="transition-delay: 0.4s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Upgrade Your Tech Readiness</h2>
+                    </div>
+                    <img src="https://miro.medium.com/v2/resize:fit:538/1*YcCyHHVu2zVFBBXVP4BFEw.png" 
+                        alt="Tech Readiness" 
+                        class="rounded-lg mb-4 w-full h-40 object-cover scale-on-hover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x160/red-500/white?text=Tech+Readiness'">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Keep your devices updated and learn basic troubleshooting.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Back up your notes and files regularly using cloud storage (Google Drive, Dropbox).</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Familiarize yourself with multiple learning tools so you’re not dependent on just one.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card rounded-2xl p-8 card-shadow fade-in" style="transition-delay: 0.5s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-lime-500 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Strengthen Communication Skills</h2>
+                    </div>
+                    <img src="https://cdn.prod.website-files.com/621ca7b6009267905d98302b/6262c9802f96512de3f6d46f_624f206a42b03b4128e4da87_61e6f86ce59a17b6dc3f5eca_improving-communication.jpeg"
+                        alt="Communication Skills" 
+                        class="rounded-lg mb-4 w-full h-40 object-cover scale-on-hover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x160/yellow-500/white?text=Communication'">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Be proactive in reaching out to peers or teachers when confused.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Use proper email/online etiquette to ask questions or request help.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Participate in forums or chats to stay connected with the learning community.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card rounded-2xl p-8 card-shadow fade-in" style="transition-delay: 0.6s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Manage Stress and Emotions</h2>
+                    </div>
+                    <img src="https://theeaves.org.uk/wp-content/uploads/2020/04/stress-management-tips-e1587993314646.png" 
+                        alt="Stress Management" 
+                        class="rounded-lg mb-4 w-full h-40 object-cover scale-on-hover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x160/indigo-500/white?text=Stress+Management'">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Use mindfulness techniques like deep breathing or meditation to handle uncertainty.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Keep a journal to reflect on what’s working and what’s overwhelming.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Don’t aim for perfection — aim for progress and balance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card rounded-2xl p-8 card-shadow fade-in" style="transition-delay: 0.7s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Adaptive Habits & Self-Assessment</h2>
+                    </div>
+                    <img src="https://catlintucker.com/wp-content/uploads/2023/09/Screenshot-2023-09-10-at-8.16.17-AM.png" 
+                        alt="Adaptive Habits" 
+                        class="rounded-lg mb-4 w-full h-40 object-cover scale-on-hover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x160/pink-500/white?text=Adaptive+Habits'">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Each week, reflect: “What did I adapt to this week? How did I handle it?”</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Rate yourself on flexibility, time management, and emotional control.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Set mini goals like: “This week, I’ll try a new study technique,” or “I’ll reach out in the discussion board.”</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Switch between learning styles: videos, podcasts, reading, or hands-on.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Review material in different formats — it makes you flexible and improves retention.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Test yourself under different conditions (different times, locations, or devices).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card rounded-2xl p-8 card-shadow fade-in" style="transition-delay: 0.8s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-gray-500 to-slate-500 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Cultivate Curiosity & Lifelong Learning</h2>
+                    </div>
+                    <img src="https://hireveda.com/content/images/2023/05/educational-psychology-flat-person-concept-with-light-bulb-and-head-teaching-techniques-for-minds-intellectual-development-empowering-human-curiosity-imagination-and-discovery-process-by-learning-vector-4.webp" 
+                        alt="Cultivate Curiosity" 
+                        class="rounded-lg mb-4 w-full h-40 object-cover scale-on-hover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x160/gray-500/white?text=Cultivate+Curiosity'">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Actively seek out new information and skills, even outside your immediate curriculum.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Develop a habit of asking “why” and “how” to deepen understanding.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">See every new piece of software or concept as an opportunity to expand your knowledge base.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Stay updated with trends in online learning and educational technology.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card rounded-2xl p-8 card-shadow fade-in" style="transition-delay: 0.9s;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-amber-500 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Practice Mindfulness & Focus</h2>
+                    </div>
+                    <img src="https://blogimage.vantagefit.io/vfitimages/2023/10/A-girl-practicing-mindfulness-exercise.png" 
+                        alt="Mindfulness and Focus" 
+                        class="rounded-lg mb-4 w-full h-40 object-cover scale-on-hover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x160/orange-500/white?text=Mindfulness'">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Engage in short meditation or breathing exercises before study sessions.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Minimize digital distractions by closing unnecessary tabs and muting notifications.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <p class="text-gray-700 leading-relaxed">Develop the ability to stay present and focused on the task at hand, even during complex topics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 fade-in" id="action-buttons" style="transition-delay: 1.1s;">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button id="retake-btn" class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 scale-on-hover">
+                        Re-Assess My Adaptability
+                    </button>
+                    <button id="improve-btn" class="border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 scale-on-hover">
+                        Explore Growth Resources
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-1">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold">E-Adapt</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Your partner in building resilience and adaptability for effective online learning.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-cyan-400">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/predict" class="text-gray-300 hover:text-white transition-colors">Assess Your Adaptability</a></li>
+                        <li><a href="/adapt" class="text-gray-300 hover:text-white transition-colors">Grow Your Adaptability</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-cyan-400">Contact Us</h4>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p>123@e-adapt.com</p>
+                        <p>+91 99999 99999</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-gray-400 text-sm mt-8">
+            &copy; 2025 E-Adapt. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const faders = document.querySelectorAll('.fade-in');
+
+            const appearOptions = {
+                threshold: 0.1, 
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('visible');
+                        appearOnScroll.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+
+            document.getElementById('retake-btn').addEventListener('click', () => {
+                window.location.href = '/predict'; 
+            });
+
+            document.getElementById('improve-btn').addEventListener('click', () => {
+                window.location.href = '/grow';
+            });
+        });
+    </script>
+</body>
+</html>
